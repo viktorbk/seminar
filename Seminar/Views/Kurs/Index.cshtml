@@ -1,0 +1,52 @@
+﻿@model Seminar.Views.Kurs.KurslisteVm
+
+@{
+    ViewBag.Title = "Kursliste";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Opprett nytt kurs", "Opprett")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Navn))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Kursholder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Rom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Fra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Til)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Navn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kursholder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Til)
+        </td>
+    </tr>
+}
+</table>
