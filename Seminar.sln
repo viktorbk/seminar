@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seminar.Data", "Seminar.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seminar.Business.Api", "Seminar.Business.Api\Seminar.Business.Api.csproj", "{3D49AD7B-EDF5-4EC5-9291-5438B65C5BC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seminar.Business.Tests", "Seminar.Business.Tests\Seminar.Business.Tests.csproj", "{AD71A3E9-A52F-48E4-A09A-CE8E352E9366}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3D49AD7B-EDF5-4EC5-9291-5438B65C5BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D49AD7B-EDF5-4EC5-9291-5438B65C5BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D49AD7B-EDF5-4EC5-9291-5438B65C5BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD71A3E9-A52F-48E4-A09A-CE8E352E9366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD71A3E9-A52F-48E4-A09A-CE8E352E9366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD71A3E9-A52F-48E4-A09A-CE8E352E9366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD71A3E9-A52F-48E4-A09A-CE8E352E9366}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

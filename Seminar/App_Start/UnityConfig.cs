@@ -12,9 +12,9 @@ namespace Seminar
         {
 			var container = new UnityContainer();
 
-            container.RegisterType<IKursApi, KursApi>();
-
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+
+            Seminar.Business.BootStrapper.Configure(container);
         }
     }
 }

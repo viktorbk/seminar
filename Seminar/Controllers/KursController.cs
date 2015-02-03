@@ -34,14 +34,16 @@ namespace Seminar.Controllers
 
         [HttpPost]
         public ActionResult Opprett(KursVm kursVm)
-        {
-            var kurs = new Kurs(kursVm.Navn, kursVm.Kursholder, kursVm.Rom, (DateTime)kursVm.Fra, (DateTime)kursVm.Til);
-            _kursApi.CreateKurs(kurs);
+        { 
+            if (ModelState.IsValid) {
+                var kurs = new Kurs(kursVm.Navn, kursVm.Kursholder, kursVm.Rom, (DateTime)kursVm.Fra, (DateTime)kursVm.Til);
+                _kursApi.CreateKurs(kurs);
 
-            ModelState.Clear();
+                var vm = new KursVm { KursCreated = true };
+                return View(vm);
+            }
 
-            var vm = new KursVm {KursCreated = true};
-            return View(vm);
+            return View();
         }
     }
 }

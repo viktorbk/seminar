@@ -12,7 +12,7 @@ namespace Seminar.Business
     {
         public void CreateKurs(Kurs kurs)
         {
-            using(var db = new SeminarDbContext()) 
+            using (var db = new SeminarDbContext()) 
             {
                 try
                 {

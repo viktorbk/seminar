@@ -14,6 +14,8 @@ namespace Seminar.Business.Api.Models
 {
 	public class SeminarDbContext : DbContext
 	{
+        private const string DefaultConnectionString = "Seminar";
+
 		public DbSet<Kurs> Kurs { get; set; }
 		public DbSet<Kursdeltaker> Kursdeltakere { get; set; }
 
@@ -27,7 +29,7 @@ namespace Seminar.Business.Api.Models
 			modelBuilder.Configurations.AddFromAssembly(GetType().Assembly);
 		}
 
-        public class SeminarDbInitializer : CreateDatabaseIfNotExists<SeminarDbContext>
+        public class SeminarCreateDbInitializer : CreateDatabaseIfNotExists<SeminarDbContext>
         {
             protected override void Seed(SeminarDbContext context)
             {
@@ -35,9 +37,17 @@ namespace Seminar.Business.Api.Models
             }
         }
 
-		public SeminarDbContext() : base("Seminar")
+        public class SeminarDropCreateDbInitializer : DropCreateDatabaseAlways<SeminarDbContext>
+        {
+            protected override void Seed(SeminarDbContext context)
+            {
+                base.Seed(context);
+            }
+        }
+
+        public SeminarDbContext()
+            : base(DefaultConnectionString)
 		{
-            Database.SetInitializer<SeminarDbContext>(new SeminarDbInitializer());
 		}
 
 		public override int SaveChanges()
