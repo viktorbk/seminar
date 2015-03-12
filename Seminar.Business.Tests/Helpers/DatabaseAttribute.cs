@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using NUnit.Framework;
 using Seminar.Business.Api.Models;
+using Seminar.Data;
 
 namespace Seminar.Business.Tests.Helpers
 {

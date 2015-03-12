@@ -20,7 +20,7 @@ namespace Seminar.Controllers
 
         public ActionResult Index()
         {
-            var vm = new KurslisteVm {Kursliste = _kursApi.GetAllKurs().Select(s => new KursVm(s.Navn, s.Kursholder, s.Rom, s.Fra, s.Til))};
+            var vm = new KurslisteVm {Kursliste = _kursApi.AllKurs.Select(s => new KursVm(s.Navn, s.Kursholder, s.Rom, s.Fra, s.Til))};
 
             return View(vm);
         }
@@ -36,7 +36,7 @@ namespace Seminar.Controllers
         public ActionResult Opprett(KursVm kursVm)
         { 
             if (ModelState.IsValid) {
-                var kurs = new Kurs(kursVm.Navn, kursVm.Kursholder, kursVm.Rom, (DateTime)kursVm.Fra, (DateTime)kursVm.Til);
+                var kurs = new Kurs(null, kursVm.Navn, kursVm.Kursholder, kursVm.Rom, (DateTime)kursVm.Fra, (DateTime)kursVm.Til);
                 _kursApi.CreateKurs(kurs);
 
                 var vm = new KursVm { KursCreated = true };

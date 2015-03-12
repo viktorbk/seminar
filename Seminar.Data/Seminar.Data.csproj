@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\KursMap.cs" />
     <Compile Include="SeminarDbContext.cs" />
     <Compile Include="Entities\Kurs.cs" />
     <Compile Include="Entities\Kursdeltaker.cs" />

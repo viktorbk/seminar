@@ -9,8 +9,9 @@ namespace Seminar.Business.Api
 {
     public interface IKursApi
     {
+		IEnumerable<Kurs> AllKurs { get; }
         void CreateKurs(Kurs kurs);
-
-        IEnumerable<Kurs> GetAllKurs();
+	    IEnumerable<Deltaker> AllDeltakereForKurs(int kursId);
+	    void CreateKursdeltaker(Kursdeltaker kursdeltaker);
     }
 }

@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Seminar.Business.Api.Models
 {
-	public class Kursdeltaker
+	public class Kursdeltaker: Deltaker
 	{
-		public int Id { get; set; }
+		public Kurs Kurs { get; private set; }
 
-		public Kursdeltaker()
+		private Kursdeltaker() { }
+
+		public Kursdeltaker(int id, string navn, string epost, Kurs kurs) : base(id, navn, epost)
 		{
+			Kurs = kurs;
 		}
 	}
 }

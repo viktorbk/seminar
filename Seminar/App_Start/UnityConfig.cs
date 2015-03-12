@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using Microsoft.Practices.Unity;
-using Seminar.Business;
 using Seminar.Business.Api;
 using Unity.Mvc5;
 
@@ -14,7 +13,7 @@ namespace Seminar
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
-            Seminar.Business.BootStrapper.Configure(container);
+			BusinessApi.Initialize(container);
         }
     }
 }
